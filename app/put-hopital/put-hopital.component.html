@@ -1,0 +1,26 @@
+
+<div class="container">
+    <form>
+        <div class="form-group">
+            <h1>Modifier un hopital:</h1>
+            <label for="hopital">Hopital:</label><br>
+            <select name="hopital" class="form-control" id="hopital" [(ngModel)]="newHopital">
+                <option *ngFor="let unHopital of listHopitaux" [ngValue]="unHopital">{{unHopital.nomHopital}}
+                   - {{unHopital.adresseHopital}} - {{unHopital.villeHopital}}</option>
+            </select>
+            <label>Nom:</label><br>
+            <input type="text" name="nomHopital" class="form-control" id="nomHopital"
+                [(ngModel)]="newHopital.nomHopital"><br>
+            <label>Adresse:</label><br>
+            <input type="text" name="adresseHopital" class="form-control" id="adresseHopital"
+                [(ngModel)]="newHopital.adresseHopital"><br>
+            <label>Capacite:</label><br>
+            <input type="text" name="capacite" class="form-control" id="capacite" [(ngModel)]="newHopital.capacite"><br>
+            <label>Ville:</label><br>
+                <input type="text" name="villeHopital" class="form-control" id="villeHopital"
+                    [(ngModel)]="newHopital.villeHopital"><br>
+
+                <input type="submit" value="Modifier" class="btn btn-dark" (click)="updateHopital(newHopital.idHopital, newHopital)">
+        </div>
+    </form>
+</div>

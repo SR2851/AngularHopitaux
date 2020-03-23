@@ -1,0 +1,28 @@
+
+
+<div class="container">
+    <h1>Liste des patients</h1>
+    <table class="table">
+        <thead class="thead-dark">
+        <th scope="col">Id Patient</th>
+        <th scope="col">Nom Patient</th>
+        <th scope="col">Prenom Patient</th>
+        <th scope="col">Maladie</th>
+        <th scope="col">Médecin</th>
+        <th scope="col">Hopital</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let unPatient of listPatients">
+        <th scope="row">{{unPatient.idPatient}}</th>
+        <td>{{unPatient.nomPatient}}</td>
+        <td>{{unPatient.prenomPatient}}</td>
+        <td>{{unPatient.maladie}}</td>
+        <td>{{unPatient.medecin.prenomMedecin}} {{unPatient.medecin.nomMedecin}} <br>{{unPatient.medecin.specialite}}</td>
+        <td>{{unPatient.medecin.hopital.nomHopital}}<br> {{unPatient.medecin.hopital.adresseHopital}}<br> {{unPatient.medecin.hopital.villeHopital}}</td>
+        <td><button class="btn btn-danger"  (click)="deletePatient(unPatient.idPatient)">Supprimer</button>
+            <a class="btn btn-primary"  [routerLink]="['/patient/update/'+unPatient.idPatient]">Modifier</a></td>    
+    </tr>
+    </tbody>
+</table>
+</div>

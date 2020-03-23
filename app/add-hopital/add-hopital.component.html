@@ -1,0 +1,22 @@
+
+
+<div class="container">
+    <form>
+        <div class="form-group">
+            <h1>Ajouter un hopital:</h1>
+            <label>Nom:</label><br>
+            <input type="text" name="nomHopital" class="form-control" id="nomHopital"
+                [(ngModel)]="newHopital.nomHopital"><br>
+            <label>Adresse:</label><br>
+            <input type="text" name="adresseHopital" class="form-control" id="adresseHopital"
+                [(ngModel)]="newHopital.adresseHopital"><br>
+            <label>Capacite:</label><br>
+            <input type="text" name="capacite" class="form-control" id="capacite" [(ngModel)]="newHopital.capacite"><br>
+            <label>Ville:</label><br>
+                <input type="text" name="villeHopital" class="form-control" id="villeHopital"
+                    [(ngModel)]="newHopital.villeHopital"><br>
+
+                <input type="submit" value="Ajouter" class="btn btn-dark" (click)="addHopital()">
+        </div>
+    </form>
+</div>

@@ -18,7 +18,7 @@
         <td>{{unHopital.adresseHopital}}</td>
         <td>{{unHopital.capacite}}</td>
         <td>{{unHopital.villeHopital}}</td>
-        <td><button class="btn btn-danger"  (click)="deleteHopital(unHopital.idHopital)">Supprimer</button>
+        <td><button class="btn btn-danger"  (click)="deleteHopital(unHopital.idHopital, unHopital.nomHopital)">Supprimer</button>
             <a class="btn btn-primary"  [routerLink]="['/hopital/update/'+unHopital.idHopital]">Modifier</a></td>
               </tr>    
     </tbody>

@@ -19,7 +19,8 @@
                 <td>{{unMedecin.prenomMedecin}}</td>
                 <td>{{unMedecin.specialite}}</td>
                 <td>{{unMedecin.hopital.nomHopital}}<br> {{unMedecin.hopital.adresseHopital}}<br> {{unMedecin.hopital.villeHopital}}</td>
-                <td><button class="btn btn-danger"  (click)="deleteMedecin(unMedecin.idMedecin)">Supprimer</button>
+                <td>
+                  <button type="button" class="btn btn-danger" (click)="deleteMedecin(unMedecin.idMedecin, unMedecin.specialite, unMedecin.prenomMedecin, unMedecin.nomMedecin)">Supprimer</button>
                     <a class="btn btn-primary"  [routerLink]="['/medecin/update/'+unMedecin.idMedecin]">Modifier</a></td>
                 
             </tr>

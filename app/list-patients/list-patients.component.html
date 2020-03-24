@@ -20,8 +20,10 @@
         <td>{{unPatient.maladie}}</td>
         <td>{{unPatient.medecin.prenomMedecin}} {{unPatient.medecin.nomMedecin}} <br>{{unPatient.medecin.specialite}}</td>
         <td>{{unPatient.medecin.hopital.nomHopital}}<br> {{unPatient.medecin.hopital.adresseHopital}}<br> {{unPatient.medecin.hopital.villeHopital}}</td>
-        <td><button class="btn btn-danger"  (click)="deletePatient(unPatient.idPatient)">Supprimer</button>
-            <a class="btn btn-primary"  [routerLink]="['/patient/update/'+unPatient.idPatient]">Modifier</a></td>    
+       <td>
+        <button type="button" class="btn btn-danger" (click)="deletePatient(unPatient.idPatient, unPatient.prenomPatient, unPatient.nomPatient)">Supprimer</button>
+            <a class="btn btn-primary"  [routerLink]="['/patient/update/'+unPatient.idPatient]">Modifier</a>
+        </td>    
     </tr>
     </tbody>
 </table>

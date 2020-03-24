@@ -6,16 +6,16 @@
         <div class="form-group">
             <label>Nom</label><br>
             <input type="text" name="nomMedecin" class="form-control" id="nomMedecin"
-                [(ngModel)]="newMedecin.nomMedecin"><br>
+                [(ngModel)]="newMedecin.nomMedecin" placeholder="Nom du médecin"><br>
             <label>Prénom</label><br>
             <input type="text" name="prenomMedecin" class="form-control" id="prenomMedecin"
-                [(ngModel)]="newMedecin.prenomMedecin"><br>
+                [(ngModel)]="newMedecin.prenomMedecin" placeholder="Prénom du médecin"><br>
             <label>Spécialité</label><br>
             <input type="text" name="capacite" class="form-control" id="specialite"
-                [(ngModel)]="newMedecin.specialite"><br>
+                [(ngModel)]="newMedecin.specialite" placeholder="Spécialité du médecin"><br>
 
             <label for="hopital">Hopital:</label><br>
-            <select name="hopital" class="form-control" id="hopital" [(ngModel)]="newMedecin.hopital">
+            <select name="hopital" class="form-control" id="hopital" [(ngModel)]="newMedecin.hopital" >
                 <option *ngFor="let unHopital of listHopitaux" [ngValue]="unHopital">{{unHopital.nomHopital}}
                     {{unHopital.adresseHopital}} {{unHopital.villeHopital}}</option>
             </select>

@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Hopital } from '../model/hopital';
 import { HopitalService } from '../Service/hopital.service';
+// ES6 Modules or TypeScript
+import Swal from 'sweetalert2'
+
+
 
 @Component({
   selector: 'app-add-hopital',
@@ -19,7 +23,27 @@ export class AddHopitalComponent implements OnInit {
   addHopital() {
     this.hopitalService.addHopital(this.newHopital).subscribe(
       data => {
-        console.log(data)
+        if (data['idHopital'] == 0){
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Something went wrong!',
+            
+          })
+        }
+        
+        
+        else if(data['idHopital']){
+          Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Hopital ajouté!',
+            showConfirmButton: true,
+            timer: 1500
+          }).then( () => {
+            window.location.href = "http://localhost:4200/hopital"
+          })
+        }
       }
     )
   }

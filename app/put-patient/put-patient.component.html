@@ -14,8 +14,8 @@
         <label>Maladie</label><br>
         <input type="text" name="capacite" class="form-control" id="maladie" [(ngModel)]="newPatient.maladie"><br>
         <label for="medecin">Médecin:</label><br>
-                <select name="medecin" class="form-control" id="medecin" [(ngModel)]="newPatient.medecin">
-                    <option *ngFor="let unMedecin of listMedecins" [ngValue]="unMedecin"> {{unMedecin.specialite}}: {{unMedecin.prenomMedecin}} {{unMedecin.nomMedecin}} </option>
+                <select name="medecin" [compareWith]="compareFn" class="form-control" id="medecin" [(ngModel)]="newPatient.medecin">
+                    <option *ngFor="let unMedecin of listMedecins" [ngValue]="unMedecin">{{unMedecin.specialite}}: {{unMedecin.prenomMedecin}} {{unMedecin.nomMedecin}}</option>
                 </select>
         <input type="submit" value="Modifier" class="btn btn-dark" (click)="updatePatient(newPatient.idPatient, newPatient)">
     </div>

@@ -4,11 +4,11 @@
     <h1>Ajouter un patient:</h1>
     <div class="form-group">
     <label>Nom</label><br>
-    <input type="text" name="nomPatient" class="form-control" id="nomPatient" [(ngModel)]="newPatient.nomPatient"><br>
+    <input type="text" name="nomPatient" class="form-control" id="nomPatient" [(ngModel)]="newPatient.nomPatient" placeholder="Nom du patient"><br>
     <label>Prénom</label><br>
-    <input type="text" name="prenomPatient" class="form-control" id="prenomPatient" [(ngModel)]="newPatient.prenomPatient"><br>
+    <input type="text" name="prenomPatient" class="form-control" id="prenomPatient" [(ngModel)]="newPatient.prenomPatient" placeholder="Prénom du patient"><br>
     <label>Maladie</label><br>
-    <input type="text" name="capacite" class="form-control" id="maladie" [(ngModel)]="newPatient.maladie"><br>
+    <input type="text" name="capacite" class="form-control" id="maladie" [(ngModel)]="newPatient.maladie" placeholder="maladie ou problème du patient"><br>
     <label for="medecin">Médecin:</label><br>
             <select name="medecin" class="form-control" id="medecin" [(ngModel)]="newPatient.medecin">
                 <option *ngFor="let unMedecin of listMedecins" [ngValue]="unMedecin"> {{unMedecin.specialite}}: {{unMedecin.prenomMedecin}} {{unMedecin.nomMedecin}} </option>

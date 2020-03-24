@@ -8,19 +8,19 @@
             <select name="medecin" class="form-control" id="medecin" [(ngModel)]="newMedecin">
                 <option *ngFor="let unMedecin of listMedecins" [ngValue]="unMedecin"> {{unMedecin.specialite}}: {{unMedecin.prenomMedecin}} {{unMedecin.nomMedecin}} </option>
             </select>
-            <label>Nom</label><br>
+            <label>Nom:</label><br>
             <input type="text" name="nomMedecin" class="form-control" id="nomMedecin"
                 [(ngModel)]="newMedecin.nomMedecin"><br>
-            <label>Prénom</label><br>
+            <label>Prénom:</label><br>
             <input type="text" name="prenomMedecin" class="form-control" id="prenomMedecin"
                 [(ngModel)]="newMedecin.prenomMedecin"><br>
-            <label>Spécialité</label><br>
+            <label>Spécialité:</label><br>
             <input type="text" name="capacite" class="form-control" id="specialite"
                 [(ngModel)]="newMedecin.specialite"><br>
 
             <label for="hopital">Hopital:</label><br>
-            <select name="hopital" class="form-control" id="hopital" [(ngModel)]="newMedecin.hopital">
-                <option>{{newMedecin.hopital}}</option>
+            <select name="hopital" [compareWith]="compareFn" class="form-control" id="hopital" [(ngModel)]="newMedecin.hopital">
+                
                 <option *ngFor="let unHopital of listHopitaux" [ngValue]="unHopital">{{unHopital.nomHopital}}
                     {{unHopital.adresseHopital}} {{unHopital.villeHopital}}</option>
             </select>

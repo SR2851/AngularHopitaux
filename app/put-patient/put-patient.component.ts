@@ -4,6 +4,7 @@ import { Medecin } from '../model/medecin';
 import { MedecinService } from '../Service/medecin.service';
 import { PatientService } from '../Service/patient.service';
 import { ActivatedRoute } from '@angular/router';
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-put-patient',
@@ -17,7 +18,9 @@ listMedecins: Medecin[];
 idPatientURL : number;
 
   constructor(private patientService : PatientService, private medecinService: MedecinService, private route: ActivatedRoute) {this.idPatientURL = parseInt(this.route.snapshot.paramMap.get('id')); }
-  
+  compareFn(m1: Medecin, m2: Medecin) {
+    return m1 && m2 ? m1.idMedecin === m2.idMedecin : m1 === m2;
+}
 
   ngOnInit(): void {
     console.log(this.idPatientURL)
@@ -42,7 +45,25 @@ idPatientURL : number;
   updatePatient(idPatient: number, newPatient: Patient) {
     this.patientService.updatePatient(idPatient, newPatient).subscribe(
       data => {
-        console.log(data)
+        if (data['idPatient'] == 0){
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Something went wrong!',
+            
+          })
+        }
+        else if(data['idPatient']){
+          Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Patient mis à jour!',
+            showConfirmButton: true,
+            timer: 1500
+          }).then( () => {
+            window.location.href = "http://localhost:4200/patient"
+          })
+        }
       }
     )
   }
